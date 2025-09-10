@@ -5,3 +5,8 @@
   justify-content: space-between;
   align-items: center;
 }
+
+main {
+  margin-block: 20px;
+  align-self: stretch;
+}

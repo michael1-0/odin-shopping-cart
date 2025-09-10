@@ -1,13 +1,23 @@
+import { useOutletContext } from "react-router";
+import CardItem from "../../components/CardItem/CardItem";
+
 function Cart() {
+  const { cart, setCart } = useOutletContext();
+
+  if (cart.length <= 0) return "Cart is empty!";
+
   return (
     <div>
-      <h1>Im cart</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum atque
-        nihil sit quidem molestiae corporis consequuntur. Maxime quis id sit
-        quibusdam nemo. Repudiandae, blanditiis. Reprehenderit amet debitis quos
-        qui quod!
-      </p>
+      <div>
+        {cart.map((item) => (
+          <CardItem
+            item={item}
+            key={item.id}
+            isCartItem={true}
+            setCart={setCart}
+          />
+        ))}
+      </div>
     </div>
   );
 }

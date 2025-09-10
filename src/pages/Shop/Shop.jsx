@@ -1,13 +1,18 @@
+import CardItem from "../../components/CardItem/CardItem";
+import styles from "./Shop.module.css";
+import { useOutletContext } from "react-router";
+
 function Shop() {
+  const { isLoading, items, error } = useOutletContext();
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>A network error was encountered: {error}</p>;
+
   return (
-    <div>
-      <h1>Shop</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sint,
-        culpa voluptatibus officiis ipsum repellendus ipsam est quos, error
-        suscipit reiciendis maxime possimus exercitationem iure distinctio. Rem
-        ad pariatur quos.
-      </p>
+    <div className={styles["shop-wrapper"]}>
+      {items.map((item) => (
+        <CardItem item={item} key={item.id} />
+      ))}
     </div>
   );
 }

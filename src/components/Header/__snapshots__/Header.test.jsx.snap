@@ -1,0 +1,52 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > should match snapshot 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <header
+      class="_header_a5b977"
+    >
+      <div>
+        Header
+      </div>
+      <nav
+        class="_nav_a5b977"
+      >
+        <a
+          data-discover="true"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          data-discover="true"
+          href="/shop"
+        >
+          Shop
+        </a>
+        <a
+          data-discover="true"
+          href="/cart"
+        >
+          Cart
+        </a>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>
+          home
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, nemo quos aliquam, facere ad sit laborum rerum perspiciatis doloremque autem placeat fuga alias sint ullam ratione rem veniam nisi saepe!
+        </p>
+      </div>
+    </main>
+    <footer>
+      This is a footer
+    </footer>
+  </div>
+</div>
+`;

@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer > should match snapshot 1`] = `
+<div>
+  <footer>
+    This is a footer
+  </footer>
+</div>
+`;

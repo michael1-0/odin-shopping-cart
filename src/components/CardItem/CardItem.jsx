@@ -120,7 +120,7 @@ function CardItem({ item, isCartItem = false, setCart }) {
         <h4>$ {item.price}</h4>
         <p>{item.description}</p>
         <div>Category: {item.category}.</div>
-        {isCartItem ? <div>{item.amount}</div> : null}
+        {isCartItem ? <div>Quantity: {item.amount}</div> : null}
       </div>
       {!isCartItem ? (
         <ShopPageControls item={item} />

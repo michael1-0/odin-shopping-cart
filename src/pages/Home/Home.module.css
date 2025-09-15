@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-inline: 8rem;
+  align-items: center;
+  gap: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    margin-inline: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper > svg {
+    height: 200px;
+  }
+  .wrapper {
+    margin-inline: 3rem;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .wrapper {
+    margin-inline: 2rem;
+  }
+}

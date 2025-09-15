@@ -45,19 +45,32 @@ function ShopPageControls({ item }) {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(item, e)}>
-      <input
-        type="number"
-        min={0}
-        onChange={(e) => handleInputOnChange(e)}
-        value={count}
-      />
-      <button onClick={handleAddCountClick} type="button">
-        +
-      </button>
-      <button onClick={handleDecrementCountClick} type="button">
-        -
-      </button>
+    <form
+      onSubmit={(e) => handleSubmit(item, e)}
+      className={styles["shop-page-controls"]}
+    >
+      <div className={styles["controls-wrapper"]}>
+        <label>
+          <strong>Quantity:</strong>
+        </label>
+        <div>
+          <input
+            type="number"
+            min={0}
+            onChange={(e) => handleInputOnChange(e)}
+            value={count}
+            readOnly
+          />
+          <div>
+            <button onClick={handleAddCountClick} type="button">
+              +
+            </button>
+            <button onClick={handleDecrementCountClick} type="button">
+              -
+            </button>
+          </div>
+        </div>
+      </div>
       <button type="submit">Add to Cart</button>
     </form>
   );
@@ -103,24 +116,46 @@ function CartPageItemControls({ itemId, setCart }) {
   }
 
   return (
-    <div>
-      <button onClick={handleDecrementItemClick}>-</button>
-      <button onClick={handleIncrementItemClick}>+</button>
+    <div className={styles["cart-item-controls"]}>
+      <div>
+        <button onClick={handleDecrementItemClick}>-</button>
+        <button onClick={handleIncrementItemClick}>+</button>
+      </div>
       <button onClick={handleRemoveItemClick}>Remove Item</button>
     </div>
   );
 }
 
 function CardItem({ item, isCartItem = false, setCart }) {
+  function truncateWithEllipsis(str, maxLength = 75) {
+    const ellipsis = "...";
+    if (str.length <= maxLength) return str;
+    return str.slice(0, maxLength - ellipsis.length) + ellipsis;
+  }
+
   return (
-    <div className={styles.card}>
+    <div
+      className={
+        isCartItem ? `${styles.card} ${styles["cart-item"]}` : styles.card
+      }
+    >
       <img src={item.image} alt="alt cunningham" />
-      <div>
+      <div className={styles.middle}>
         <h3>{item.title}</h3>
-        <h4>$ {item.price}</h4>
-        <p>{item.description}</p>
-        <div>Category: {item.category}.</div>
-        {isCartItem ? <div>Quantity: {item.amount}</div> : null}
+        <h4 className={styles.price}>${item.price}</h4>
+        {!isCartItem ? (
+          <div>
+            <p>{truncateWithEllipsis(item.description)}</p>
+          </div>
+        ) : null}
+        <div className={styles.category}>
+          <strong>Category:</strong> <br /> {item.category}.
+        </div>
+        {isCartItem ? (
+          <div>
+            <strong>Quantity:</strong> {item.amount}
+          </div>
+        ) : null}
       </div>
       {!isCartItem ? (
         <ShopPageControls item={item} />

@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className={style.header}>
       <div>Header</div>
-      <nav className={style.nav}> 
+      <nav className={style.nav}>
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/cart">Cart</Link>

@@ -1,12 +1,23 @@
+@font-face {
+  font-family: "scp";
+  src: url("./assets/fonts/SourceCodePro-Medium.ttf");
+}
+
+body {
+  color: #3f3f37;
+  background-color: #c7c2b3;
+  font-family: "scp", sans-serif;
+}
+
 .wrapper {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
   align-items: center;
 }
 
 main {
-  margin-block: 20px;
   align-self: stretch;
 }

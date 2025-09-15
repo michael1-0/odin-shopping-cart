@@ -5,8 +5,13 @@ import { useOutletContext } from "react-router";
 function Shop() {
   const { isLoading, items, error } = useOutletContext();
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>A network error was encountered: {error}</p>;
+  if (isLoading) return <p className={styles["text-center"]}>Loading...</p>;
+  if (error)
+    return (
+      <p className={styles["text-center"]}>
+        A network error was encountered: {error}
+      </p>
+    );
 
   return (
     <div className={styles["shop-wrapper"]}>

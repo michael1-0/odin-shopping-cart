@@ -2,12 +2,8 @@ import { Link } from "react-router";
 import style from "./Header.module.css";
 
 function Header({ cart = [] }) {
-  let count = 0;
-  cart.map((item) => {
-    if (item) {
-      count++;
-    }
-  });
+  const count = cart.length;
+
   return (
     <header className={style.header}>
       <div>

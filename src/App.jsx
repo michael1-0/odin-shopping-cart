@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        <Header />
+        <Header cart={cart} />
         <main>
           {outlet ? (
             <Outlet context={{ isLoading, items, error, cart, setCart }} />
@@ -56,7 +56,7 @@ function App() {
             <Home />
           )}
         </main>
-        <Footer />
+        <Footer cart={cart} />
       </div>
     </>
   );

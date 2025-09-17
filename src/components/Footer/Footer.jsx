@@ -1,7 +1,13 @@
 import styles from "./Footer.module.css";
 
-function Footer() {
-  return <footer className={styles.footer}>This is a footer</footer>;
+function Footer({ cart = [] }) {
+  let money = 0;
+  cart.map((item) => {
+    if (item) {
+      money += item.amount * item.price;
+    }
+  });
+  return <footer className={styles.footer}> ${money} to be paid </footer>;
 }
 
 export default Footer;

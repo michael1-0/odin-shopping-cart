@@ -5,7 +5,9 @@ exports[`Footer > should match snapshot 1`] = `
   <footer
     class="_footer_acfd2c"
   >
-    This is a footer
+     $
+    0
+     to be paid 
   </footer>
 </div>
 `;

@@ -9,7 +9,7 @@ exports[`Header > should match snapshot 1`] = `
       class="_header_a5b977"
     >
       <div>
-        Header
+        0 item in cart
       </div>
       <nav
         class="_nav_a5b977"
@@ -62,7 +62,9 @@ exports[`Header > should match snapshot 1`] = `
     <footer
       class="_footer_acfd2c"
     >
-      This is a footer
+       $
+      0
+       to be paid 
     </footer>
   </div>
 </div>

@@ -24,6 +24,8 @@ function ShopPageControls({ item }) {
   function handleSubmit(item, e) {
     e.preventDefault();
 
+    if (count === 0) return;
+
     const newItem = { ...item, amount: 0 };
     newItem.amount += count;
 
@@ -42,6 +44,8 @@ function ShopPageControls({ item }) {
 
       return [...c, newItem];
     });
+
+    setCount(0);
   }
 
   return (
@@ -149,11 +153,11 @@ function CardItem({ item, isCartItem = false, setCart }) {
           </div>
         ) : null}
         <div className={styles.category}>
-          <strong>Category:</strong> <br /> {item.category}.
+          <strong>Category:</strong> {item.category}.
         </div>
         {isCartItem ? (
           <div>
-            <strong>Quantity:</strong> {item.amount}
+            <strong>Quantity: {item.amount}</strong>
           </div>
         ) : null}
       </div>

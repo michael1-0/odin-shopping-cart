@@ -7,7 +7,7 @@ function Footer({ cart = [] }) {
       money += item.amount * item.price;
     }
   });
-  return <footer className={styles.footer}> ${money} to be paid </footer>;
+  return <footer className={styles.footer}> ${money.toFixed(2)} to be paid </footer>;
 }
 
 export default Footer;
